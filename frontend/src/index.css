@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 280 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Drum pad colors */
+    --drum-kick: 0 85% 55%;
+    --drum-snare: 45 100% 50%;
+    --drum-hihat: 180 100% 50%;
+    --drum-tom: 280 100% 60%;
+    --drum-crash: 120 100% 45%;
+    --drum-ride: 200 100% 60%;
+    --drum-clap: 330 100% 60%;
+    --drum-open-hihat: 160 100% 50%;
+    --drum-floor-tom: 25 100% 55%;
+
+    /* Glow effects */
+    --glow-intensity: 0.6;
+    
+    /* Font families */
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 180 100% 50%;
+  }
+
+  .dark {
+    --background: 220 20% 6%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .drum-pad {
+    @apply relative rounded-2xl cursor-pointer select-none;
+    @apply transition-all duration-100 ease-out;
+    @apply flex flex-col items-center justify-center gap-2;
+    background: linear-gradient(
+      145deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--muted)) 100%
+    );
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .drum-pad:hover {
+    transform: scale(1.02);
+  }
+
+  .drum-pad:active,
+  .drum-pad.active {
+    transform: scale(0.95);
+  }
+
+  .drum-pad-glow {
+    @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-100;
+    filter: blur(20px);
+  }
+
+  .drum-pad.active .drum-pad-glow {
+    opacity: var(--glow-intensity);
+  }
+
+  .key-hint {
+    @apply text-xs font-medium px-2 py-1 rounded-md;
+    @apply bg-background/50 text-muted-foreground;
+    font-family: var(--font-display);
+  }
+
+  .drum-label {
+    @apply text-sm font-semibold uppercase tracking-wider;
+    font-family: var(--font-display);
+  }
+
+  .glass-panel {
+    @apply rounded-3xl p-6;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card) / 0.8) 0%,
+      hsl(var(--muted) / 0.6) 100%
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .neon-text {
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 40px currentColor;
+  }
+}
+
+@layer utilities {
+  .animate-hit {
+    animation: hit 0.1s ease-out;
+  }
+
+  @keyframes hit {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.92);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
