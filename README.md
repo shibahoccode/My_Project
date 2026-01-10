@@ -1,50 +1,101 @@
-Welcome to My Project
-Chào mừng bạn đến với dự án của tôi. Dưới đây là hướng dẫn chi tiết để thiết lập và khởi chạy cả hai phần Frontend và Backend trên máy tính cá nhân.
+# 🎯 Welcome to My Project
 
-🛠 Công nghệ sử dụng
-Frontend: Vite, React, TypeScript, Tailwind CSS, shadcn-ui.
+> Chào mừng bạn đến với dự án của tôi! Hãy cùng bắt đầu hành trình thiết lập và khám phá dự án này nhé! 🚀
 
-Backend: Java, Spring Boot, Maven.
+---
 
-Quản lý phiên bản: Git.
+## 🛠 Công nghệ sử dụng
 
-🚀 Hướng dẫn chạy Frontend (Node.js)
-Để chạy phần giao diện, bạn cần cài đặt Node.js và npm.
+### Frontend
+- ⚡ **Vite** - Build tool siêu nhanh
+- ⚛️ **React** - Thư viện UI linh hoạt
+- 📘 **TypeScript** - JavaScript với type safety
+- 🎨 **Tailwind CSS** - Utility-first CSS framework
+- 🧩 **shadcn-ui** - Component library đẹp mắt
 
-Clone repository:
+### Backend
+- ☕ **Java** - Ngôn ngữ lập trình mạnh mẽ
+- 🍃 **Spring Boot** - Framework phát triển backend hiện đại
+- 📦 **Maven** - Quản lý dependencies và build
 
-Bash
+### Tools
+- 🔄 **Git** - Version control system
 
+---
+
+## 🚀 Hướng dẫn chạy Frontend
+
+### Yêu cầu
+- Node.js (phiên bản 16 trở lên)
+- npm hoặc yarn
+
+### Các bước thực hiện
+
+**1️⃣ Clone repository về máy**
+```bash
 git clone <YOUR_GIT_URL>
 cd <YOUR_PROJECT_NAME>
-Cài đặt dependencies:
+```
 
-Bash
-
+**2️⃣ Cài đặt các packages cần thiết**
+```bash
 npm install
-Khởi chạy server phát triển:
+```
 
-Bash
-
+**3️⃣ Khởi động development server**
+```bash
 npm run dev
-Sau khi chạy lệnh, trình duyệt sẽ tự động mở hoặc bạn có thể truy cập qua địa chỉ http://localhost:5173.
+```
 
-⚙️ Hướng dẫn chạy Backend (Spring Boot & Maven)
-Để chạy phần máy chủ, bạn cần cài đặt JDK (Java Development Kit) từ phiên bản 17 trở lên và Maven.
+**4️⃣ Truy cập ứng dụng**
 
-Di chuyển vào thư mục backend: (Giả sử thư mục backend nằm trong folder backend)
+Mở trình duyệt và truy cập: **http://localhost:5173** 🌐
 
-Bash
+---
 
+## ⚙️ Hướng dẫn chạy Backend
+
+### Yêu cầu
+- JDK 17 trở lên
+- Maven 3.6+
+
+### Các bước thực hiện
+
+**1️⃣ Di chuyển vào thư mục backend**
+```bash
 cd backend
-Cài đặt các gói phụ thuộc (Dependencies):
+```
 
-Bash
-
+**2️⃣ Cài đặt dependencies và build project**
+```bash
 mvn clean install
-Khởi chạy ứng dụng Spring Boot:
+```
 
-Bash
-
+**3️⃣ Khởi động Spring Boot application**
+```bash
 mvn spring-boot:run
-Server backend thường sẽ chạy tại địa chỉ http://localhost:8080.
+```
+
+**4️⃣ Kiểm tra server**
+
+Backend sẽ chạy tại: **http://localhost:8080** 🎯
+
+---
+
+## 📝 Ghi chú
+
+- ✅ Đảm bảo cả Frontend và Backend đều đang chạy để ứng dụng hoạt động đầy đủ
+- 🔧 Kiểm tra file cấu hình để điều chỉnh port nếu cần
+- 💡 Xem logs để debug nếu gặp vấn đề
+
+---
+
+## 🤝 Đóng góp
+
+Mọi đóng góp đều được chào đón! Hãy tạo Pull Request hoặc mở Issue nếu bạn có ý tưởng cải tiến.
+
+---
+
+
+
+**Happy Coding! 💻✨**
